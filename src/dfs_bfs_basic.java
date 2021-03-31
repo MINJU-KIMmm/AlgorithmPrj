@@ -7,7 +7,7 @@ import java.io.*;
 public class dfs_bfs_basic {
 	static int[][]check; //간선 연결 상태
 	static boolean[] visited; //방문 여부
-	static int n, m; //n: 정점개수  m: 간선개수
+	static int n, m; //n: 정점개수,  m: 간선개수
 	static int start; //시작 정점
 	
 	public static void main(String[] args) {
