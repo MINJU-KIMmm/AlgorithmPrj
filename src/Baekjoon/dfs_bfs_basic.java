@@ -1,14 +1,14 @@
 import java.util.*;
 import java.io.*;
 
-//dfs : ½ºÅÃ or Àç±Í(Àç±Í¸¦ ÀÌ¿ëÇÏ´Â °Ô Á» ´õ º¸ÆíÀû)
-//bfs : Å¥
+//dfs : ìŠ¤íƒ or ì¬ê·€(ì¬ê·€ë¥¼ ì´ìš©í•˜ëŠ” ê²Œ ì¢€ ë” ë³´í¸ì )
+//bfs : í
 
 public class dfs_bfs_basic {
-	static int[][]check; //°£¼± ¿¬°á »óÅÂ
-	static boolean[] visited; //¹æ¹® ¿©ºÎ
-	static int n, m; //n: Á¤Á¡°³¼ö,  m: °£¼±°³¼ö
-	static int start; //½ÃÀÛ Á¤Á¡
+	static int[][]check; //ê°„ì„  ì—°ê²° ìƒíƒœ
+	static boolean[] visited; //ë°©ë¬¸ ì—¬ë¶€
+	static int n, m; //n: ì •ì ê°œìˆ˜,  m: ê°„ì„ ê°œìˆ˜
+	static int start; //ì‹œì‘ ì •ì 
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -18,9 +18,9 @@ public class dfs_bfs_basic {
 		start=sc.nextInt();
 		
 		check=new int[1001][1001];
-		visited=new boolean[1001];//ÃÊ±â°ª false
+		visited=new boolean[1001];//ì´ˆê¸°ê°’ false
 		
-		//°£¼± ¿¬°á »óÅÂ
+		//ê°„ì„  ì—°ê²° ìƒíƒœ
 		for(int i=0;i<m;i++) {
 			int x=sc.nextInt();
 			int y=sc.nextInt();
@@ -30,7 +30,7 @@ public class dfs_bfs_basic {
 		
 		dfs(start);
 		
-		visited=new boolean[1001]; //ÃÊ±âÈ­
+		visited=new boolean[1001]; //ì´ˆê¸°í™”
 		System.out.println();
 		
 		bfs();
