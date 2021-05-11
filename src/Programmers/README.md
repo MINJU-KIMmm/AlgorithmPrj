@@ -3,7 +3,7 @@
 https://programmers.co.kr/learn/challenges
 
 # 문제 풀이 
-🍺 : 난이도
+🍺 : Level
 ### 입국심사 🍺🍺🍺
 https://red-mimmu.tistory.com/15?category=886134
 ### 키패드 누르기 🍺
