@@ -7,3 +7,7 @@ https://programmers.co.kr/learn/challenges
 https://red-mimmu.tistory.com/15?category=886134
 ### 키패드 누르기
 https://red-mimmu.tistory.com/16
+### 124나라의 숫자
+https://red-mimmu.tistory.com/17?category=886134
+### 문자열 압축
+https://red-mimmu.tistory.com/18?category=886134
