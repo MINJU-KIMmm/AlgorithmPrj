@@ -4,11 +4,11 @@ https://programmers.co.kr/learn/challenges
 
 # 문제 풀이 
 🍺 : Level
-### 입국심사 🍺🍺🍺
+### 1. 입국심사 🍺🍺🍺
 https://red-mimmu.tistory.com/15?category=886134
-### 키패드 누르기 🍺
+### 2. 키패드 누르기 🍺
 https://red-mimmu.tistory.com/16
-### 124나라의 숫자 🍺🍺
+### 3. 124나라의 숫자 🍺🍺
 https://red-mimmu.tistory.com/17?category=886134
-### 문자열 압축 🍺🍺
+### 4. 문자열 압축 🍺🍺
 https://red-mimmu.tistory.com/18?category=886134
