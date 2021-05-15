@@ -3,14 +3,22 @@
 https://programmers.co.kr/learn/challenges
 
 # 문제 풀이 
-🍺 : Level
-### 1. 입국심사 🍺🍺🍺
-https://red-mimmu.tistory.com/15?category=886134
-### 2. 키패드 누르기 🍺
+
+## Level1
+### 1. 키패드 누르기 
 https://red-mimmu.tistory.com/16
-### 3. 124나라의 숫자 🍺🍺
+### 2. 소수만들기
+https://red-mimmu.tistory.com/21
+
+## Level2
+### 1. 124나라의 숫자 
 https://red-mimmu.tistory.com/17?category=886134
-### 4. 문자열 압축 🍺🍺
+### 2. 문자열 압축 
 https://red-mimmu.tistory.com/18?category=886134
-### 5. 더 맵게 🍺🍺
+### 3. 더 맵게 
 https://red-mimmu.tistory.com/20
+
+## Level3
+### 1. 입국심사 
+https://red-mimmu.tistory.com/15?category=886134
+
