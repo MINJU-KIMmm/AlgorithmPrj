@@ -17,6 +17,8 @@ https://red-mimmu.tistory.com/17?category=886134
 https://red-mimmu.tistory.com/18?category=886134
 ### 3. 더 맵게 
 https://red-mimmu.tistory.com/20
+### 4. 오픈채팅방
+https://red-mimmu.tistory.com/22
 
 ## Level3
 ### 1. 입국심사 
