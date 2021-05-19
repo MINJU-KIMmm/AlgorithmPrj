@@ -9,6 +9,10 @@ https://programmers.co.kr/learn/challenges
 https://red-mimmu.tistory.com/16
 ### 2. 소수만들기
 https://red-mimmu.tistory.com/21
+### 3. 음양더하기
+풀이 생략
+### 4. 폰켓몬
+https://red-mimmu.tistory.com/24
 
 ## Level2
 ### 1. 124나라의 숫자 
@@ -19,6 +23,8 @@ https://red-mimmu.tistory.com/18?category=886134
 https://red-mimmu.tistory.com/20
 ### 4. 오픈채팅방
 https://red-mimmu.tistory.com/22
+### 5. 타겟 넘버
+https://red-mimmu.tistory.com/23?category=886134
 
 ## Level3
 ### 1. 입국심사 
