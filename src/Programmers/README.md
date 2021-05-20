@@ -13,6 +13,8 @@ https://red-mimmu.tistory.com/21
 풀이 생략
 ### 4. 폰켓몬
 https://red-mimmu.tistory.com/24
+### 5. 예산
+https://red-mimmu.tistory.com/25
 
 ## Level2
 ### 1. 124나라의 숫자 
