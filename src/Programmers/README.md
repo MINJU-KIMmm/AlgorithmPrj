@@ -27,6 +27,8 @@ https://red-mimmu.tistory.com/20
 https://red-mimmu.tistory.com/22
 ### 5. 타겟 넘버
 https://red-mimmu.tistory.com/23?category=886134
+### 6. 기능개발
+https://red-mimmu.tistory.com/26
 
 ## Level3
 ### 1. 입국심사 
