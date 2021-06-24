@@ -29,6 +29,10 @@ https://red-mimmu.tistory.com/22
 https://red-mimmu.tistory.com/23?category=886134
 ### 6. 기능개발
 https://red-mimmu.tistory.com/26
+### 7. 전화번호 목록
+풀이 생략
+### 8. 행렬 테두리 회전하기
+풀이 생략
 
 ## Level3
 ### 1. 입국심사 
