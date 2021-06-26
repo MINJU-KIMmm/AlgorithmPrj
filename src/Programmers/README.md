@@ -32,7 +32,7 @@ https://red-mimmu.tistory.com/26
 ### 7. 전화번호 목록
 풀이 생략
 ### 8. 행렬 테두리 회전하기
-풀이 생략
+https://red-mimmu.tistory.com/30
 ### 9. 프린터
 풀이 생략
 ### 10. 뉴스클러스터링
