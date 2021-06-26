@@ -40,7 +40,7 @@ https://red-mimmu.tistory.com/30
 ### 11. 멀쩡한 사각형
 풀이 생략
 ### 12. 올바른 괄호
-풀이 생략
+https://red-mimmu.tistory.com/31
 ### 13. 가장 큰 수
 복습 필요🥨🥨
 
