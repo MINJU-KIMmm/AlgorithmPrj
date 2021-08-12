@@ -1,57 +1,57 @@
 package Level3;
 import java.util.*;
 
-public class ÀÔ±¹½É»ç {
+public class ï¿½Ô±ï¿½ï¿½É»ï¿½ {
 
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(solution(6, new int[] {7,10}));
-	}
-	
-	//key(ºñ±³ÇÒ °ª)=»ç¶÷(n), mid(Å½»öÇÒ°Í)=½É»ç¹Þ´Â µ¥ °É¸®´Â ½Ã°£
-	public static long solution(int n, int[] times) {
-        long answer = 0;
-        Arrays.sort(times);
-        
-        long left, right, mid, key;
-        left=0; //½Ã°£ÀÌ Á¦ÀÏ Á¶±Ý °É¸± °æ¿ì
-        right=(long)times[times.length-1]*n; //½Ã°£ÀÌ Á¦ÀÏ ¸¹ÀÌ °É¸± °æ¿ì
-        
-        answer=right;
-        
-        while(left<=right) {
-        	mid=(left+right)/2;
-        	key=0;
-        	
-        	for(int i=0;i<times.length;i++) {
-        		key+=mid/times[i]; //midµ¿¾È °Ë»çÇÒ ¼ö ÀÖ´Â ½É»ç ¹ÞÀ» ¼ö ÀÖ´Â »ç¶÷ ¼ö
-        	}
-        	
-        	//n¸í °Ë»ç ´Ù ÇßÀ» °æ¿ì = ½Ã°£ÀÌ ³²À» °æ¿ì -> ´õ ¸¹ÀÌ °Ë»çÇÒ ¼ö ÀÖÀ½
-        	if(key>=n) {
-        		if(mid<answer) answer=mid;
-        		right=mid-1;
-        	}
-        	//n¸í °Ë»ç ´Ù ÇÏÁö ¸øÇßÀ» °æ¿ì = ½Ã°£ÀÌ ³²Áö ¾ÊÀ» °æ¿ì(½Ã°£ ºÎÁ·) -> ½Ã°£ ´õ Ãß°¡
-        	else left=mid+1;
-        }
-        
-        return answer;
-    }
-	
-	//ÀÌºÐÅ½»ö
-	static int BinarySearch(int arr[], int key) {
+		}
+
+//key(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½)=ï¿½ï¿½ï¿½(n), mid(Å½ï¿½ï¿½ï¿½Ò°ï¿½)=ï¿½É»ï¿½Þ´ï¿½ ï¿½ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
+public static long solution(int n, int[] times) {
+		long answer = 0;
+		Arrays.sort(times);
+
+		long left, right, mid, key;
+		left=0; //ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ ï¿½ï¿½ï¿½
+		right=(long)times[times.length-1]*n; //ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½É¸ï¿½ ï¿½ï¿½ï¿½
+
+		answer=right;
+
+		while(left<=right) {
+		mid=(left+right)/2;
+		key=0;
+
+		for(int i=0;i<times.length;i++) {
+		key+=mid/times[i]; //midï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½É»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½
+		}
+
+		//nï¿½ï¿½ ï¿½Ë»ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ = ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ -> ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		if(key>=n) {
+		if(mid<answer) answer=mid;
+		right=mid-1;
+		}
+		//nï¿½ï¿½ ï¿½Ë»ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ = ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½) -> ï¿½Ã°ï¿½ ï¿½ï¿½ ï¿½ß°ï¿½
+		else left=mid+1;
+		}
+
+		return answer;
+		}
+
+//ï¿½Ìºï¿½Å½ï¿½ï¿½
+static int BinarySearch(int arr[], int key) {
 		int left=0;
 		int right=arr.length-1;
 		int	mid;
-		
+
 		while(left<=right) {
-			mid=(left+right)/2;
-			if(arr[mid]==key) return mid;
-			else if(arr[mid]>key) left=mid-1;
-			else right=mid+1;
+		mid=(left+right)/2;
+		if(arr[mid]==key) return mid;
+		else if(arr[mid]>key) left=mid-1;
+		else right=mid+1;
 		}
-		
-		return -1; //key ¸øÃ£Àº °æ¿ì
-	}
-}
+
+		return -1; //key ï¿½ï¿½Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½
+		}
+		}

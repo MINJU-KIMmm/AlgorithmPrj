@@ -1,0 +1,35 @@
+package 동적계획법1;
+
+import java.util.Scanner;
+public class No9251_LCS {
+		
+	static char[] str1;
+	static char[] str2;
+	static Integer[][] dp;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		str1=sc.next().toCharArray();
+		str2=sc.next().toCharArray();
+		
+		dp=new Integer[str1.length][str2.length];
+		
+		System.out.println(LCS(str1.length-1, str2.length-1));
+		
+	}
+	
+	public static int LCS(int x, int y) {
+		if(x==-1||y==-1)
+			return 0;
+		if(dp[x][y]==null) {
+			//dp[x][y]=0;
+			if(str1[x]==str2[y])
+				dp[x][y]=LCS(x-1, y-1)+1;
+			else
+				dp[x][y]=Math.max(LCS(x-1, y), LCS(x, y-1));
+		}
+		
+		return dp[x][y];
+	}
+
+}
