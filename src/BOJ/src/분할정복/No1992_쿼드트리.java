@@ -31,15 +31,15 @@ public class No1992_쿼드트리 {
 		
 		sb.append('('); 
 		int newSize=size/2;
-		partition(row, col, newSize);
-		partition(row, col+newSize, newSize);
-		partition(row+newSize, col, newSize);
-		partition(row+newSize, col+newSize, newSize);
+		partition(row, col, newSize); //왼쪽 위 
+		partition(row, col+newSize, newSize); //오른쪽 위 
+		partition(row+newSize, col, newSize);//왼쪽 아래 
+		partition(row+newSize, col+newSize, newSize); //오른쪽 아래 
 		
 		sb.append(')'); 
 	}
 	
-	
+	//영역이 같은 수로 이루어져있는지 
 	static boolean sameNumber(int row, int col, int size) {
 		int num=arr[row][col];
 		
