@@ -20,7 +20,7 @@ public class E16No8_사다리 {
 	static long solution(int n, int[] finalArray) {
 		long bridge=0;
 		
-		//버블정렬 이용 
+		//버블정렬 이용(다리 하나가 추가될 때마다 인접한 두 수 간의 스왑이 일어남) 
 		//swap 필요하면 bridge 개수 증가
 		for(int i=0;i<n;i++) {
 			for(int j=i-1;j>=0;j--) {
