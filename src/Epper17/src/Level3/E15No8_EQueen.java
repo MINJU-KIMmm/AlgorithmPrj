@@ -40,8 +40,10 @@ public class E15No8_EQueen {
 		int k=1;
 		boolean flag=true;
 		
+		// 1. 해당 열의 행과 i열의 행이 일치하는 경우(같은행에 존재)
+		//2. 대각선상에 놓여있는 경우(열의 차와 행의 차가 같은 경우)
 		while(k<i&&flag) {
-			if(col[i]==col[k]||abs(col[i],col[k])==i-k) {
+			if(col[i]==col[k]||Math.abs(col[i]-col[k])==i-k) { 
 				flag=false;
 			}
 			k++;
