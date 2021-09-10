@@ -21,19 +21,18 @@ public class 시험감독 {
 	}
 	
 	public static long solution(int N, int[]A, int B, int C) {
-		long answer=0;
+		long answer=N;
 		for(int i=0;i<A.length;i++) {
-			A[i]-=B;
-			answer++;
-		}
-		
-		for(int i=0;i<A.length;i++) {
-			if(A[i]%C==0) {
-				answer+=A[i]/C;
-			} else {
-				answer+=A[i]/C+1;
+			int person=A[i]-B;
+			if(person>0) {
+				if(person%C==0) {
+					answer+=(person/C);
+				} else {
+					answer+=(person/C+1);
+				}
 			}
 		}
+		
 		
 		return answer;
 	}
