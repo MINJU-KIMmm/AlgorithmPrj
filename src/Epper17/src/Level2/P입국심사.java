@@ -16,8 +16,8 @@ public class P입국심사 {
 		long left, right, mid;
 		long key;
 		
-		left=0;
-		right=(long)times[times.length-1]*n;
+		left=0;  
+		right=(long)times[times.length-1]*n; 
 		
 		answer=right;
 		
