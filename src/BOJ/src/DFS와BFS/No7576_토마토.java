@@ -40,16 +40,21 @@ public class No7576_토마토 {
 		}
 		
 		while(!q.isEmpty()) {
+			//현재 토마토좌표 
 			int[] tomato=q.poll();
 			int x=tomato[0];
 			int y=tomato[1];
 			for(int i=0;i<4;i++) {
+				//다음 토마토 좌표 구하기 
 				int nx=x+dx[i];
 				int ny=y+dy[i];
 				
+				//범위 체크 
 				if(nx>=0&&nx<N&&ny>=0&&ny<M) {
+					//아직 익지 않은 토마토인 경우 
 					if(arr[nx][ny]==0) {
 						q.offer(new int[] {nx, ny});
+						//이전 토마토의 날짜에서 +1 
 						arr[nx][ny]=arr[x][y]+1;
 					}
 				}
@@ -59,8 +64,9 @@ public class No7576_토마토 {
 		int day=0;
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<M;j++) {
+				//아직도 익지 않은 토마토가 있는 경우 -1 return
 				if(arr[i][j]==0) return -1;
-				day=Math.max(day, arr[i][j]);
+				day=Math.max(day, arr[i][j]); //최대 일수 구하기 
 			}
 		}
 		
