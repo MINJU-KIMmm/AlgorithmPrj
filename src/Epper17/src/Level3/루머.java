@@ -20,20 +20,19 @@ public class 루머 {
 	public static int[] solution(int N, int[][] adj, int M, int[] firstInfected) {
 		int[] answer=new int[N];
 		int[] turn=new int[N];
-		
-		Queue<Integer> q=new LinkedList<>();
+		Queue<Integer>q=new LinkedList<>();
 		
 		for(int i=0;i<N;i++) {
 			answer[i]=-1;
 		}
 		
+		for(int i=1;i<=N;i++) {
+			turn[i-1]=adj[i].length/2;
+		}
+		
 		for(int f:firstInfected) {
 			q.offer(f);
 			answer[f-1]=0;
-		}
-		
-		for(int i=1;i<=N;i++) {
-			turn[i-1]=adj[i].length/2;
 		}
 		
 		while(!q.isEmpty()) {
