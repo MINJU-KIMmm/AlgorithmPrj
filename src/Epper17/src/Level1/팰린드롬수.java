@@ -9,8 +9,8 @@ public class 팰린드롬수 {
 		Scanner sc=new Scanner(System.in);
 		
 		while(true) {
-			String input=sc.next();
-			if(input.equals("0")) break;
+			int input=sc.nextInt();
+			if(input==0) break;
 			
 			boolean flag=solution(input);
 			if(flag) {
@@ -21,20 +21,19 @@ public class 팰린드롬수 {
 		}
 	}
 	
-	public static boolean solution(String str) {
+	public static boolean solution(int n) {
+		String str=Integer.toString(n);
+		boolean flag=true;
 		int left=0;
 		int right=str.length()-1;
-		boolean flag=true;
 		
 		while(left<=right) {
-			if(str.charAt(left)!=str.charAt(right)) {
-				flag=false;
-			}
-			
+			if(str.charAt(left)!=str.charAt(right)) flag=false;
 			left++;
 			right--;
 		}
 		
 		return flag;
+		
 	}
 }

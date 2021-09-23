@@ -12,22 +12,21 @@ public class OX퀴즈 {
 	}
 
 	public static int solution(String str) {
-		int answer = 0;
-		int temp = 0;
-
-
-		for (int i = 0; i < str.length(); i++) {
-			char c = str.charAt(i);
-			// char before=str.charAt(i-1);
-
-			if (c == 'X') {
-				temp = 0;
-			} else {
+		int answer=0;
+		int temp=0;
+		
+		for(int i=0;i<str.length();i++) {
+			char c=str.charAt(i);
+			
+			if(c=='O') {
 				temp++;
-				answer += temp;
+				answer+=temp;
+			}else {
+				temp=0;
 			}
+	
 		}
-
+		
 		return answer;
 	}
 }

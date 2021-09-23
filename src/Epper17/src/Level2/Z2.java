@@ -1,20 +1,21 @@
 package Level2;
 
 import java.util.Scanner;
-public class BOJ1074_Z {
-	
-	static int[][]arr;
-	static int cnt=0;
+
+public class Z2 {
+	// 2 3 1 -> 11
+	// 3 7 7 -> 63
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
+		
 		int N=sc.nextInt();
 		int r=sc.nextInt();
 		int c=sc.nextInt();
 		
 		System.out.println(solution(N, r, c));
 	}
-
+	
 	public static int solution(int n, int r, int c) {
 		int size=1;
 		for(int i=0;i<n;i++) {
@@ -27,7 +28,6 @@ public class BOJ1074_Z {
 		
 		while(size>0) {
 			size/=2;
-			
 			if(r<x+size&&c<y+size) {
 				cnt+=size*size*0;
 			}else if(r<x+size&&c>=y+size) {
@@ -46,6 +46,7 @@ public class BOJ1074_Z {
 		}
 		
 		return cnt;
+		
 	}
-	
+
 }

@@ -1,15 +1,15 @@
 package Level3;
 
 import java.util.*;
-public class P불량사용자 {
+public class 불량사용자3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(solution(new String[] {"frodo", "fradi", "crodo", "abc123", "frodoc"}, new String[] {"fr*d*", "abc1**"}));
+		System.out.println(solution(new String[] {"frodo", "fradi", "crodo", "abc123", "frodoc"}, new String[] {"fr*d*", "*rodo", "******", "******"}));
+
 	}
 	
-	//dfs 함수 
-	static HashSet<String> dfs(int b, boolean[] visited, HashSet<String>s, String[] user, String[] banned){
+	static HashSet<String> dfs(int b, boolean[] visited, HashSet<String> s, String[] user, String[] banned){
 		if(b==banned.length) {
 			String str="";
 			
@@ -23,7 +23,7 @@ public class P불량사용자 {
 		
 		for(int i=0;i<user.length;i++) {
 			if(visited[i]) continue;
-			if(user[i].length()!=banned[b].length()) continue;
+			if(banned[b].length()!=user[i].length()) continue;
 			
 			boolean temp=true;
 			for(int j=0;j<user[i].length();j++) {
@@ -40,19 +40,16 @@ public class P불량사용자 {
 				visited[i]=false;
 			}
 		}
-		
 		return s;
 	}
 	
-	public static int solution(String[] user, String[] banned) {
-		int answer=0;
-		
+	static int solution(String[] user, String[] banned) {
 		HashSet<String> s=new HashSet<>();
 		boolean[] visited=new boolean[8];
 		
 		s=dfs(0, visited, s, user, banned);
 		
-		answer=s.size();
+		int answer=s.size();
 		
 		return answer;
 	}

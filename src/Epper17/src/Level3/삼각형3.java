@@ -1,33 +1,31 @@
 package Level3;
 
 import java.util.*;
-public class 삼각형경로에서주울수있는최대의돈 {
-	
-	static long arr[][];
-	static long dp[][];
-	static int N;
+public class 삼각형3 {
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
+		int N=sc.nextInt();
+		int[][] arr=new int[N][N];
 		
-		N=sc.nextInt();
-		arr=new long[N][N];
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<=i;j++) {
-				arr[i][j]=sc.nextLong();
+				arr[i][j]=sc.nextInt();
 			}
 		}
 		
-		System.out.println(solution(N));
+		long answer=solution(N, arr);
+		System.out.println(answer);
 	}
-	
-	static long solution(int n) {
+
+	public static long solution(int n, int[][] arr) {
 		long answer=0;
 		
 		for(int i=1;i<n;i++) {
 			for(int j=0;j<=i;j++) {
 				if(j==0) arr[i][j]=arr[i][j]+arr[i-1][j];
-				else if(i==j) arr[i][j]=arr[i][j]+arr[i-1][j-1];
+				else if(j==i) arr[i][j]=arr[i][j]+arr[i-1][j-1];
 				else arr[i][j]=arr[i][j]+Math.max(arr[i-1][j], arr[i-1][j-1]);
 				
 				answer=Math.max(answer, arr[i][j]);
@@ -36,5 +34,4 @@ public class 삼각형경로에서주울수있는최대의돈 {
 		
 		return answer;
 	}
-
 }

@@ -6,40 +6,36 @@ public class BOJ13305_주유소 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
+		int cities=sc.nextInt();
+		int[] dist=new int[cities-1];
+		long answer;
 		
-		int N=sc.nextInt();
-		
-		long[] road=new long[N-1];
-		for(int i=0;i<N-1;i++) {
-			road[i]=sc.nextLong();
+		for(int i=0;i<cities-1;i++) {
+			dist[i]=sc.nextInt();
 		}
 		
-		long[] price=new long[N];
-		for(int i=0;i<N;i++) {
-			price[i]=sc.nextLong();
+		int[] price=new int[cities];
+		for(int i=0;i<cities;i++) {
+			price[i]=sc.nextInt();
 		}
 		
-		long total=0L;
+		answer=solution(cities, dist, price);
 		
-		int i=0;
-		int j=0;
-		
-		while(true) {
-			if(i==N-1)
-				break;
-			j=0;
-			
-			while(price[i]<=price[i+j]) {
-				total+=(price[i]*road[i+j]);
-				j++;
-				if(i+j==N-1)
-					break;
-			}
-			
-			i+=j;
-		}
-		
-		System.out.println(total);
+		System.out.println(answer);
 	}
 
+	public static long solution(int n, int[] dist, int[] cost) {
+		long total=0;
+		long minCost=cost[0];
+		
+		for(int i=0;i<n-1;i++) {
+			if(minCost>cost[i]) {
+				minCost=cost[i];
+			}
+			
+			total+=minCost*dist[i];
+		}
+		
+		return total;
+	}
 }

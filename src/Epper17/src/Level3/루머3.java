@@ -1,7 +1,7 @@
 package Level3;
 
 import java.util.*;
-public class 루머2 {
+public class 루머3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,30 +17,26 @@ public class 루머2 {
 		}
 	}
 	
-	public static int[] solution(int N, int[][] adj, int M, int[] first) {
-		int[] answer=new int[N];
-		int[] turn=new int[N];
-		
-		Queue<Integer>q=new LinkedList<>();
-		
-		for(int i=0;i<N;i++) {
+	public static int[] solution(int n, int[][]adj, int m, int[] first) {
+		int[] answer=new int[n];
+		int[] turn=new int[n];
+		Queue<Integer> q=new LinkedList<>();
+		for(int i=0;i<n;i++)
 			answer[i]=-1;
-		}
-		
-		for(int i=1;i<=N;i++) {
+		for(int i=1;i<=n;i++)
 			turn[i-1]=adj[i].length/2;
-		}
 		
 		for(int f:first) {
 			q.offer(f);
 			answer[f-1]=0;
 		}
 		
+		
 		while(!q.isEmpty()) {
 			int temp=q.poll();
 			
 			for(Integer next:adj[temp]) {
-				if(next==0)continue;
+				if(next==0) continue;
 				
 				turn[next-1]-=1;
 				if(turn[next-1]<=0&&answer[next-1]==-1) {

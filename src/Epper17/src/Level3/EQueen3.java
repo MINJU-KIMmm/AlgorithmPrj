@@ -1,12 +1,12 @@
 package Level3;
 
-import java.util.*;
-public class EQueen2 {
+import java.util.Scanner;
 
-	static int N;
+public class EQueen3 {
 	static int[] col=new int[15];
 	static int[][] xy=new int[15][15];
-	static int ans;
+	static int N;
+	static int ans=0;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int n, k, a;
@@ -27,6 +27,7 @@ public class EQueen2 {
 		}
 		
 		System.out.println(solution(n, k, x, y));
+		
 	}
 	
 	static boolean check(int i) {
@@ -35,7 +36,6 @@ public class EQueen2 {
 		
 		while(j<i&&flag) {
 			if(col[i]==col[j]||Math.abs(col[i]-col[j])==i-j) flag=false;
-			
 			j++;
 		}
 		
@@ -46,7 +46,7 @@ public class EQueen2 {
 		int j;
 		
 		if(check(i)) {
-			if(i==N) ans++;
+			if(i==N)ans++;
 			else {
 				for(j=1;j<=N;j++) {
 					if(xy[i][j]==1) continue;
@@ -59,7 +59,6 @@ public class EQueen2 {
 	
 	static int solution(int n, int k, int[] x, int[] y) {
 		N=n;
-		
 		for(int i=0;i<k;i++) {
 			xy[x[i]-1][y[i]]=1;
 		}

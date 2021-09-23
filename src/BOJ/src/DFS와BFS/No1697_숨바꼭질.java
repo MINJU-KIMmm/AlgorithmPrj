@@ -3,9 +3,9 @@ package DFS와BFS;
 import java.util.*;
 public class No1697_숨바꼭질 {
 	
-	static int N;
-	static int K;
-	static int[] arr=new int[100001];
+	static int N; //수빈 
+	static int K; //동생 
+	static int[] arr=new int[100001]; //걸리는 시간을 저장할 배열 (한번도 방문하지 않았다면 0)
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);

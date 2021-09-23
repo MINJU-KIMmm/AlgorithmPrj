@@ -12,28 +12,24 @@ public class 문자열압축 {
 	}
 
 	public static String solution(String input) {
-		String answer="";
-		//첫문자 
-		char first=input.charAt(0);
-		if(first=='1') {
-			answer+="1";
-		}
+		String str="";
+		if(input.charAt(0)=='1') str+=1;
 		
 		int cnt=(int)'A';
-		for(int i=1;i<input.length();i++) {
-			char before=input.charAt(i-1);
+		for(int i=0;i<input.length()-1;i++) {
 			char cur=input.charAt(i);
+			char next=input.charAt(i+1);
 			
-			if(before==cur) {
+			if(cur==next) {
 				cnt++;
 			} else {
-				answer+=(char)cnt;
+				str+=(char)cnt;
 				cnt=(int)'A';
 			}
 		}
 		
-		answer+=Character.toString(cnt);
+		str+=(char)cnt;
 		
-		return answer;
+		return str;
 	}
 }

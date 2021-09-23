@@ -36,17 +36,18 @@ public class 깨알나라신문기사 {
 		List<String> answer = new ArrayList<>();
 		// 코드를 작성해주세요.
 		for(int i=0;i<r;i++) {
-			String str=words[i];
-			for(int j=0;j<zr;j++) {
-				for(int k=0;k<c;k++) {
-					for(int t=0;t<zc;t++) {
-						System.out.print(str.charAt(k));
-					}
+			String str="";
+			for(int j=0;j<c;j++) {
+				for(int k=0;k<zc;k++) {
+					str+=words[i].charAt(j);
 				}
-				System.out.println();
+				
+			}
+
+			for(int m=0;m<zr;m++) {
+				answer.add(str);
 			}
 		}
-		
 		return answer;
 	}
 }
