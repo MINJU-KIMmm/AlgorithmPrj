@@ -3,6 +3,7 @@ package 우선순위큐;
 import java.util.*;
 import java.io.*;
 //우선순위를 사용하여 중앙값을 찾는 문제 
+//시간을 줄이기 위해 BufferedReader와 StringBuilder를 사용해야 함
 public class No1655_가운데를말해요 {
 
 	//예제
