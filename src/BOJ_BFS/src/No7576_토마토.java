@@ -26,17 +26,17 @@ public class No7576_토마토 {
 	
 
 	public static int bfs(int[][] arr, int N, int M) {
-		Queue<Tomato> q=new LinkedList<>();
+		Queue<Tomato1> q=new LinkedList<>();
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<M;j++) {
 				if(arr[i][j]==1) {
-					q.offer(new Tomato(i,j));
+					q.offer(new Tomato1(i,j));
 				}
 			}
 		}
 		
 		while(!q.isEmpty()) {
-			Tomato tomato=q.poll();
+			Tomato1 tomato=q.poll();
 			int x=tomato.x;
 			int y=tomato.y;
 			
@@ -47,7 +47,7 @@ public class No7576_토마토 {
 				if(nx<0||nx>=N||ny<0||ny>=M) continue;
 				
 				if(arr[nx][ny]==0) {
-					q.offer(new Tomato(nx, ny));
+					q.offer(new Tomato1(nx, ny));
 					arr[nx][ny]=arr[x][y]+1;
 				}
 			}
@@ -68,11 +68,11 @@ public class No7576_토마토 {
 
 
 
-class Tomato{
+class Tomato1{
 	int x;
 	int y;
 	
-	public Tomato(int x, int y) {
+	public Tomato1(int x, int y) {
 		this.x=x;
 		this.y=y;
 	}
