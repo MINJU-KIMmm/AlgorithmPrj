@@ -6,8 +6,6 @@ public class No1520_내리막길 {
 	static int[][] dp;
 
 	static int[][] arr;
-	static boolean[][] visited;
-	static int count = 0;
 	static int[] dx = { -1, 1, 0, 0 };
 	static int[] dy = { 0, 0, -1, 1 };
 
@@ -22,7 +20,6 @@ public class No1520_내리막길 {
 		N = Integer.parseInt(st.nextToken());
 
 		arr = new int[M][N];
-		visited = new boolean[M][N];
 
 		dp = new int[M][N];
 
