@@ -1,3 +1,4 @@
+package Ch1_Greedy;
 import java.util.*;
 import java.io.*;
 public class Q04_만들수없는금액 {

@@ -1,3 +1,4 @@
+package Ch1_Greedy;
 import java.util.*;
 import java.io.*;
 //1이 될때까지와 비슷한 문제 

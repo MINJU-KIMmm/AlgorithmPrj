@@ -1,3 +1,4 @@
+package Ch1_Greedy;
 import java.util.*;
 import java.io.*;
 public class 예제1_거스름돈 {

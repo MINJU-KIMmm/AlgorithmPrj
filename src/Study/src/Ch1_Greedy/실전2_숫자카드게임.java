@@ -1,3 +1,4 @@
+package Ch1_Greedy;
 import java.util.*;
 import java.io.*;
 public class 실전2_숫자카드게임 {

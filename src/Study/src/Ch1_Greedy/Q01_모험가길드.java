@@ -1,3 +1,4 @@
+package Ch1_Greedy;
 import java.util.*;
 import java.io.*;
 public class Q01_모험가길드 {

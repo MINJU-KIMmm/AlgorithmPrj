@@ -1,3 +1,4 @@
+package Ch1_Greedy;
 import java.util.*;
 public class 실전1_큰수의법칙 {
 
