@@ -56,6 +56,7 @@ public class 실전_음료수얼려먹기_김민주 {
 		System.out.println(count);
 		//====================
 		
+		//=====답지풀이dfs========
 		count=0;
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<M;j++) {
@@ -64,6 +65,7 @@ public class 실전_음료수얼려먹기_김민주 {
 		}
 		
 		System.out.println(count);
+		//======================
 	}
 	
 	
@@ -71,8 +73,8 @@ public class 실전_음료수얼려먹기_김민주 {
 	static void bfs(int x, int y) {
 		Queue<IceCream>q=new LinkedList<>();
 		
-		q.offer(new IceCream(x, y));
-		visited[x][y]=true;
+		q.offer(new IceCream(x, y));//큐에 삽
+		visited[x][y]=true; //방문 체크 
 		
 		while(!q.isEmpty()) {
 			IceCream ice=q.poll();
