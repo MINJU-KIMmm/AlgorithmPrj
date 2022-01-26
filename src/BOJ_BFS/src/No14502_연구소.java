@@ -64,6 +64,7 @@ public class No14502_연구소 {
 				tempArr[i][j]=copyArr[i][j];
 			}
 		}
+		
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<M;j++) {
 				if(tempArr[i][j]==2) q.offer(new Virus(i, j));

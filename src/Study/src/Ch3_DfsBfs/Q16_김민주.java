@@ -51,9 +51,9 @@ public class Q16_김민주 {
 	}
 	
 	static void bfs(int N, int M) {
-		Queue<virus>q=new LinkedList<>();
-		int[][] tempArr=new int[N][M];
+		Queue<virus> q=new LinkedList<>();
 		
+		int[][] tempArr=new int[N][M];
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<M;j++) {
 				tempArr[i][j]=copyArr[i][j];
@@ -62,13 +62,14 @@ public class Q16_김민주 {
 		
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<M;j++) {
-				if(tempArr[i][j]==2) q.offer(new virus(i,j));
+				if(tempArr[i][j]==2) {
+					q.offer(new virus(i,j));
+				}
 			}
 		}
 		
 		while(!q.isEmpty()) {
 			virus v=q.poll();
-			
 			int x=v.x;
 			int y=v.y;
 			
@@ -80,7 +81,7 @@ public class Q16_김민주 {
 				
 				if(tempArr[nx][ny]==0) {
 					tempArr[nx][ny]=2;
-					q.offer(new virus(nx, ny));
+					q.offer(new virus(nx,ny));
 				}
 			}
 		}
@@ -92,8 +93,7 @@ public class Q16_김민주 {
 			}
 		}
 		
-		result=Math.max(cnt, result);
-		
+		result=Math.max(result, cnt);
 	}
 }
 
