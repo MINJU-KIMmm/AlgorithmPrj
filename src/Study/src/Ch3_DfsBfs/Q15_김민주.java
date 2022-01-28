@@ -4,8 +4,6 @@ import java.io.*;
 public class Q15_김민주 {
 	
 	static ArrayList<Integer>[] arr;
-	//static ArrayList<ArrayList<Integer>> arr=new ArrayList<>();
-	static int[] dist=new int[300001];
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));

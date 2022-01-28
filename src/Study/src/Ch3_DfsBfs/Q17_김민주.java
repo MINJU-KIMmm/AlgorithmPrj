@@ -30,8 +30,8 @@ public class Q17_김민주  {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
         StringTokenizer st = new StringTokenizer(br.readLine()); 
-        N = Integer.valueOf(st.nextToken()); 
-        K = Integer.valueOf(st.nextToken()); 
+        N = Integer.parseInt(st.nextToken()); 
+        K = Integer.parseInt(st.nextToken()); 
         arr = new int[N][N];
         pq = new PriorityQueue<>();
         
@@ -39,6 +39,8 @@ public class Q17_김민주  {
             st = new StringTokenizer(br.readLine()); 
             for (int j = 0; j < N; j++) { 
                 arr[i][j] = Integer.parseInt(st.nextToken());
+    			if(arr[i][j]!=0) pq.add(new Point(i,j,arr[i][j]));
+
             } 
         } 
         st = new StringTokenizer(br.readLine()); 
@@ -54,17 +56,12 @@ public class Q17_김민주  {
     } 
     
     static void bfs() { 
-        PriorityQueue<Point> q=new PriorityQueue<>();
     	PriorityQueue<Point> tmp = new PriorityQueue<>(); 
         
-    	for(int i=0;i<N;i++) {
-    		for(int j=0;j<N;j++) {
-    			if(arr[i][j]!=0) q.add(new Point(i,j,arr[i][j]));
-    		}
-    	}
+
     	
-        while(!q.isEmpty()) { 
-            Point cur = q.poll(); 
+        while(!pq.isEmpty()) { 
+            Point cur = pq.poll(); 
             for(int i=0; i<4; i++) { 
                 int nx = cur.x+dr[i]; 
                 int ny = cur.y+dc[i]; 
@@ -74,6 +71,6 @@ public class Q17_김민주  {
             }
         }
         
-        q = tmp;
+       pq = tmp;
     }
 }
