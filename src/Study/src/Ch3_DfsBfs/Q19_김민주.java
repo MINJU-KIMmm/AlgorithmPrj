@@ -50,19 +50,19 @@ public class Q19_김민주 {
 		
 		if(minus>0) {
 			minus--;
-			dfs(depth+1, N, result-=nums[depth]);
+			dfs(depth+1, N, result-nums[depth]);
 			minus++;
 		}
 		
 		if(mult>0) {
 			mult--;
-			dfs(depth+1, N, result*=nums[depth]);
+			dfs(depth+1, N, result*nums[depth]);
 			mult++;
 		}
 		
 		if(div>0) {
 			div--;
-			dfs(depth+1, N, result/=nums[depth]);
+			dfs(depth+1, N, result/nums[depth]);
 			div++;
 		}
 	}
