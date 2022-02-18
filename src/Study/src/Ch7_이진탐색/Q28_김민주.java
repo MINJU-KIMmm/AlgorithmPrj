@@ -3,19 +3,7 @@ package Ch7_이진탐색;
 import java.util.*;
 import java.io.*;
 public class Q28_김민주 {
-	static class Element implements Comparable<Element>{
-		int index;
-		int num;
-		
-		public Element(int index, int num) {
-			this.index=index;
-			this.num=num;
-		}
-		
-		public int compareTo(Element o) {
-			return this.num-o.num;
-		}
-	}
+
 	
 	static int[] arr;
 	public static void main(String[] args) throws IOException{
