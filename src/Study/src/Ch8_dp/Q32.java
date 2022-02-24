@@ -27,7 +27,6 @@ public class Q32 {
 		
 		for(int i=n-2;i>=0;i--) {
 			for(int j=0;j<=i;j++) {
-//				if(j==i) dp[i][j]=arr[i][j]+dp[i+1][j];
 				dp[i][j]=Math.max(dp[i+1][j],dp[i+1][j+1])+arr[i][j];
 			}
 		}
