@@ -9,75 +9,65 @@ public class 중_컬러링북 {
 		
 	}
 
-	static ArrayList<Integer> answer;
+	static class Point{
+		int x;
+		int y;
+		
+		public Point(int x, int y) {
+			this.x=x;
+			this.y=y;
+		}
+	}
+	
+	static int[]dx= {-1,1,0,0};
+	static int[]dy= {0,0,-1,1};
 	static boolean[][] visited;
-	public int[] solution(int m, int n, int[][] picture) {
-		answer=new ArrayList<>();
+	
+	static int[] solution(int m, int n, int[][] picture) {
+		int area=0;
+		int max=0;
 		visited=new boolean[m][n];
 		
 		for(int i=0;i<m;i++) {
 			for(int j=0;j<n;j++) {
 				if(picture[i][j]!=0&&!visited[i][j]) {
-					visited[i][j]=true;
-					bfs(picture, i,j);
+					max=Math.max(bfs(m,n,i,j,picture), max);
+					area++;
 				}
 			}
 		}
 		
-		Collections.sort(answer);
-		
-		int[] sol=new int[2];
-		sol[0]=answer.size();
-		sol[0]=answer.get(answer.size()-1);
-		
-		return sol;
+		return new int[] {area, max};
 	}
-
-
-
-	static void bfs(int[][] picture, int px, int py) {
-		int[] dx= {-1,1,0,0};
-		int[] dy= {0,0,-1,1};
-		
-		Queue<Point> q=new LinkedList<>();
-		q.offer(new Point(px,py));
-		
+	
+	static int bfs(int m, int n, int px, int py, int[][] picture) {
+		int count=1;
 		int color=picture[px][py];
-		int count=0;
+		Queue<Point> q=new LinkedList<>();
+		
+		visited[px][py]=true;
+		q.offer(new Point(px,py));
 		
 		while(!q.isEmpty()) {
 			Point p=q.poll();
 			int x=p.x;
 			int y=p.y;
 			
-			count++;
-			
 			for(int i=0;i<4;i++) {
 				int nx=x+dx[i];
 				int ny=y+dy[i];
 				
-				if(nx>=0&&nx<picture.length&&ny>=0&&ny<picture[0].length) {
-					if(!visited[nx][ny]&&picture[nx][ny]==color) {
-						q.offer(new Point(nx,ny));
-						visited[nx][ny]=true;
-					}
+				if(nx<0||nx>=m||ny<0||ny>=n) continue;
+				
+				if(color==picture[nx][ny]&&!visited[nx][ny]) {
+					q.offer(new Point(nx,ny));
+					visited[nx][ny]=true;
+					count++;
 				}
 			}
 		}
 		
-		answer.add(count);
-		
-	}	
-
-
-	static class Point {
-		int x;
-		int y;
-	
-		public Point(int x, int y) {
-			this.x = x;
-			this.y = y;
-		}
+		return count;
 	}
 }
 
