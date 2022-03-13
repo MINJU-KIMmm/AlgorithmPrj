@@ -31,8 +31,8 @@ public class 중_컬러링북 {
 		for(int i=0;i<m;i++) {
 			for(int j=0;j<n;j++) {
 				if(picture[i][j]!=0&&!visited[i][j]) {
-					max=Math.max(bfs(m,n,i,j,picture), max);
-					area++;
+					max=Math.max(bfs(m,n,i,j,picture), max); //최대 개수 계산 
+					area++; //영역 개수 계산 
 				}
 			}
 		}
@@ -41,6 +41,7 @@ public class 중_컬러링북 {
 	}
 	
 	static int bfs(int m, int n, int px, int py, int[][] picture) {
+		//처음 시작점부터 이미 하나를 세고 시작해야 하므로 count를 1부터 시작 
 		int count=1;
 		int color=picture[px][py];
 		Queue<Point> q=new LinkedList<>();
