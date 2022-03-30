@@ -13,28 +13,27 @@ public class 하_비슷한단어 {
 		int[] startAlpha=new int[26];
 		int[] otherAlpha=new int[26];
 		
-		count(startAlpha, start);
+		count(start, startAlpha);
 		
-		int cnt=0;
-		
-		for(int i=1;i<words.length;i++) {
-			cnt=0;
+		for(int i=1;i<n;i++	) {
+			int diff=0;
 			Arrays.fill(otherAlpha, 0);
-			count(otherAlpha, words[i]);
+			count(words[i], otherAlpha);
 			
 			for(int j=0;j<26;j++) {
-				cnt+=Math.abs(startAlpha[j]-otherAlpha[j]);
+				diff+=Math.abs(otherAlpha[i]-startAlpha[i]);
 			}
 			
-			if(cnt==0||cnt==1||cnt==2&&words[i].length()==start.length()) answer++;
+			if(diff==0||diff==1||diff==2&&words[i].length()==start.length()) answer++;
+			
 		}
 		
 		return answer;
 	}
 	
-	static void count(int[]alpha, String word) {
-		for(int i=0;i<word.length();i++) {
-			alpha[word.charAt(i)-'A']++;
+	static void count(String str, int[] alpha	) {
+		for(int i=0;i<str.length();i++) {
+			alpha[str.charAt(i)-'A']++;
 		}
 	}
 }

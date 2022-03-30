@@ -10,31 +10,33 @@ public class 중_컬러링북 {
 	static boolean[][] visited;
 	static int[] solution(int m, int n, int[][] picture) {
 		visited=new boolean[m][n];
-		int max=Integer.MIN_VALUE;
-		int area=0;
 		
+		int area=0;
+		int max=Integer.MIN_VALUE;
 		for(int i=0;i<m;i++) {
 			for(int j=0;j<n;j++) {
-				if(picture[i][j]!=0&&!visited[i][j]) {
+				if(!visited[i][j]&&picture[i][j]!=0) {
 					max=Math.max(max, bfs(m,n,i,j,picture));
 					area++;
 				}
 			}
 		}
 		
-		return new int[] {area,max};
+		return new int[] {area, max};
 	}
 	
-	static int[]dx= {-1,1,0,0};
-	static int[]dy= {0,0,-1,1};
 	static int bfs(int m, int n, int x, int y, int[][] picture) {
-		Queue<Point>q=new LinkedList<>();
-		
-		q.offer(new Point(x,y));
+		int cnt=1;
 		visited[x][y]=true;
 		int color=picture[x][y];
 		
-		int count=1;
+		Queue<Point> q=new LinkedList<>();
+		
+		q.offer(new Point(x,y));
+		
+		int[]dx= {-1,1,0,0};
+		int[]dy= {0,0,-1,1};
+		
 		while(!q.isEmpty()) {
 			Point p=q.poll();
 			int px=p.x;
@@ -48,13 +50,13 @@ public class 중_컬러링북 {
 				
 				if(picture[nx][ny]==color&&!visited[nx][ny]) {
 					q.offer(new Point(nx,ny));
+					cnt++;
 					visited[nx][ny]=true;
-					count++;
 				}
 			}
 		}
 		
-		return count;
+		return cnt;
 	}
 
 }

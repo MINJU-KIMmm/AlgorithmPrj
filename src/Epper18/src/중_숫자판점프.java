@@ -21,45 +21,79 @@ public class 중_숫자판점프 {
 		System.out.println(answer);
 	}
 	
-	static int solution(int[][] arr) {
-		int[]check=new int[1000000];
+	static void dfs(int[][] v, int[] visited, int x, int y, int sum, int cnt) {
+		int[] dx= {-1,1,0,0};
+		int[] dy= {0,0,-1,1};
 		
-		for(int i=0;i<5;i++	) {
-			for(int j=0;j<5;j++) {
-				dfs(arr, check, i, j, arr[i][j], 0);
-			}
-		}
-		
-		int answer=0;
-		for(int i=0;i<check.length;i++) {
-			if(check[i]==1) {
-				answer++;
-			}
-		}
-		return answer;
-	}
-	
-	static void dfs(int[][] arr, int[] check, int px, int py, int sum, int depth) {
-		if(depth==5) {
-			if(check[sum]==0) {
-				check[sum]=1;
-			}
+		if(cnt==5) {
+			if(visited[sum]==0) visited[sum]=1;
 			return;
 		}
 		
-		int[]dx= {-1,1,0,0};
-		int[]dy= {0,0,-1,1};
-		
 		for(int i=0;i<4;i++) {
-			int nx=px+dx[i];
-			int ny=py+dy[i];
+			int nx=x+dx[i];
+			int ny=y+dy[i];
 			
 			if(nx<0||nx>=5||ny<0||ny>=5) continue;
 			
-			dfs(arr, check, nx, ny, sum*10+arr[nx][ny], depth+1);
+			dfs(v,visited,nx,ny,sum*10+v[nx][ny],cnt+1);
 		}
 		
 		return;
 	}
-
+	
+	static void dfs1(int[][] v, int[] visited, int x, int y, int sum, int cnt) {
+		if(cnt==5) {
+			if(visited[sum]==0) visited[sum]=1;
+			return;
+		}
+		
+		int[] dx= {-1,1,0,0};
+		int[] dy= {0,0,-1,1};
+		
+		for(int i=0;i<4;i++) {
+			int nx=x+dx[i];
+			int ny=y+dy[i];
+			
+			if(nx<0||nx>=5||ny<0||ny>=5)continue;
+			
+			dfs(v,visited,nx,ny,sum*10+v[nx][ny],cnt+1);
+		}
+		
+		return;
+	}
+	
+	static int solution1(int[][] v) {
+		int answer=0;
+		
+		int[] visited=new int[1000000];
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<5;j++) {
+				dfs1(v,visited,i,j,v[i][j],0);
+			}
+		}
+		
+		for(int i=0;i<visited.length;i++) {
+			if(visited[i]==1) answer++;
+		}
+		
+		return answer;
+	}
+	
+	static int solution(int[][]v) {
+		int answer=0;
+		
+		int[] visited=new int[1000000];
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<5;j++) {
+				dfs(v,visited,i,j,v[i][j],0);
+			}
+		}
+		
+		for(int i=0;i<visited.length;i++) {
+			if(visited[i]==1) answer++;
+		}
+		
+		return answer;
+	}
 }
